@@ -1,0 +1,33 @@
+networks:
+  my_network:
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: pass
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    networks:
+      - my_network
+
+  sut:
+    image: sut
+    container_name: sut
+    ports:
+      - "8080:8080"
+    networks:
+      - my_network
+
+  gate-simulator:
+    image: gate-simulator
+    container_name: gate-simulator
+    ports:
+      - "9999:9999"
+    networks:
+      - my_network
