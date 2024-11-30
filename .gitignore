@@ -5,6 +5,7 @@ build/
 !**/src/test/**/build/
 
 src/main
+TODO.md
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
