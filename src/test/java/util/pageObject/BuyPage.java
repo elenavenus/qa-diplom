@@ -5,6 +5,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.impl.CollectionElement;
 import org.openqa.selenium.manager.SeleniumManagerOutput;
+import util.data.UserInfo;
+import util.data.UserInfoDataGenerator;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -26,14 +28,21 @@ public class BuyPage {
         yearInput = inputs.find(Condition.attribute("placeholder","22"));
         cvcCodeInput = inputs.find(Condition.attribute("placeholder","999"));
         cardOwnerInput = $("input:not([placeholder])");
+        continueButton = $$("button").filter(Condition.text("Продолжить")).get(0);
     }
 
-    public void inputTestData(){
-        cardInput.setValue("123");
-        monthInput.setValue("12");
-        yearInput.setValue("22");
-        cvcCodeInput.setValue("123");
-        cardOwnerInput.setValue("Elena");
+    public void inputTestData(UserInfo userInfo){
+        cardInput.setValue(userInfo.getCardNumber());
+        monthInput.setValue(userInfo.getCardMonthExpire());
+        yearInput.setValue(userInfo.getCardYearExpire());
+        cvcCodeInput.setValue(userInfo.getCvcCode());
+        cardOwnerInput.setValue(userInfo.getCardOwner());
     }
+
+    public void continueButtonCLick(){
+        continueButton.click();
+    }
+
+
 
 }
