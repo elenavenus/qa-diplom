@@ -3,10 +3,7 @@ package util.pageObject;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.impl.CollectionElement;
-import org.openqa.selenium.manager.SeleniumManagerOutput;
 import util.data.UserInfo;
-import util.data.UserInfoDataGenerator;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -43,6 +40,24 @@ public class BuyPage {
         continueButton.click();
     }
 
+    public SelenideElement getMonthErrorSpan(){
+        return monthInput.parent().parent().$(".input__sub");
+    }
 
+    public SelenideElement getYearErrorSpan(){
+        return yearInput.parent().parent().$(".input__sub");
+    }
+
+    public SelenideElement getCardNumberErrorSpan(){
+        return cardInput.parent().parent().$(".input__sub");
+    }
+
+    public SelenideElement getCardOwnerErrorSpan(){
+        return cardOwnerInput.parent().parent().$(".input__sub");
+    }
+
+    public SelenideElement getCvcCodeErrorSpan(){
+        return cvcCodeInput.parent().parent().$(".input__sub");
+    }
 
 }

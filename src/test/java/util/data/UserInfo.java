@@ -1,12 +1,16 @@
 package util.data;
 
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Value
+@AllArgsConstructor
+@Getter
+@Setter
 public class UserInfo {
-    String cardNumber;
-    String cardMonthExpire;
-    String cardYearExpire;
-    String cardOwner;
-    String cvcCode;
+    private String cardNumber;
+    private String cardMonthExpire;
+    private String cardYearExpire;
+    private String cardOwner;
+    private String cvcCode;
 }

@@ -1,4 +1,5 @@
 package util.data;
 
-public class InvalidUserField {
+public enum InvalidUserField {
+    CARD_NUMBER, CARD_NUMBER_FORMAT, MONTH, MONTH_FORMAT, YEAR, YEAR_FORMAT, OWNER, OWNER_FORMAT, CVC
 }
