@@ -27,39 +27,39 @@ public class UserInfoDataGenerator {
     public static UserInfo generateInvalidUser(InvalidUserField field){
         UserInfo validUser = generateValidUser(true);
         switch (field){
-            case CARD_NUMBER:{
+            case INVALID_CARD_NUMBER:{
                 validUser.setCardNumber(generateInvalidCardNumber(false));
                 break;
             }
-            case CARD_NUMBER_FORMAT:{
+            case INVALID_CARD_NUMBER_FORMAT:{
                 validUser.setCardNumber(generateInvalidCardNumber(true));
                 break;
             }
-            case MONTH:{
+            case INVALID_MONTH:{
                 validUser.setCardMonthExpire(generateInvalidMonth(false));
                 break;
             }
-            case MONTH_FORMAT:{
+            case INVALID_MONTH_FORMAT:{
                 validUser.setCardMonthExpire(generateInvalidMonth(true));
                 break;
             }
-            case YEAR:{
+            case INVALID_YEAR:{
                 validUser.setCardYearExpire(generateYearExpire(false));
                 break;
             }
-            case YEAR_FORMAT:{
+            case INVALID_YEAR_FORMAT:{
                 validUser.setCardYearExpire("0");
                 break;
             }
-            case OWNER:{
+            case INVALID_OWNER:{
                 validUser.setCardOwner(generateCardOwner(false));
                 break;
             }
-            case OWNER_FORMAT:{
+            case INVALID_OWNER_FORMAT:{
                 validUser.setCardOwner("");
                 break;
             }
-            case CVC:{
+            case INVALID_CVC:{
                 validUser.setCvcCode(generateCvcCode(false));
                 break;
             }

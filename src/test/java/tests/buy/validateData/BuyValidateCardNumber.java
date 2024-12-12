@@ -15,7 +15,7 @@ public class BuyValidateCardNumber {
     @Test
     void shouldValidateCardNumber(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.CARD_NUMBER));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_CARD_NUMBER));
         buyPage.continueButtonCLick();
         $("div.notification_status_error div.notification__content").should(Condition.appear, Duration.ofSeconds(15)).shouldHave(Condition.text("Ошибка! Банк отказал в проведении операции."));
     }
@@ -23,7 +23,7 @@ public class BuyValidateCardNumber {
     @Test
     void shouldValidateCardNumberFormat(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.CARD_NUMBER_FORMAT));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_CARD_NUMBER_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
         buyPage.getCardNumberErrorSpan().should(Condition.appear).shouldHave(Condition.text(errorMessage));

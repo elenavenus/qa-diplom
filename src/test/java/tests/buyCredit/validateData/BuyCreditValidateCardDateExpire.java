@@ -11,7 +11,7 @@ public class BuyCreditValidateCardDateExpire {
     @Test
     void shouldValidateMonth(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.MONTH));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_MONTH));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверно указан срок действия карты";
         buyPage.getMonthErrorSpan().should(Condition.appear).shouldHave(Condition.text(errorMessage));
@@ -20,7 +20,7 @@ public class BuyCreditValidateCardDateExpire {
     @Test
     void shouldValidateMonthFormat(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.MONTH_FORMAT));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_MONTH_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
         buyPage.getMonthErrorSpan().should(Condition.appear).shouldHave(Condition.text(errorMessage));
@@ -29,7 +29,7 @@ public class BuyCreditValidateCardDateExpire {
     @Test
     void shouldValidateYear(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.YEAR));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_YEAR));
         buyPage.continueButtonCLick();
         String errorMessage = "Истёк срок действия карты";
         buyPage.getYearErrorSpan().shouldHave(Condition.appear).shouldHave(Condition.text(errorMessage));
@@ -38,7 +38,7 @@ public class BuyCreditValidateCardDateExpire {
     @Test
     void shouldValidateYearFormat(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.YEAR_FORMAT));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_YEAR_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
         buyPage.getYearErrorSpan().shouldHave(Condition.appear).shouldHave(Condition.text(errorMessage));

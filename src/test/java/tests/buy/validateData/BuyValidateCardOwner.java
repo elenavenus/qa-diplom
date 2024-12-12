@@ -15,7 +15,7 @@ public class BuyValidateCardOwner {
     @Test
     void shouldValidateCardOwner(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.OWNER));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_OWNER));
         buyPage.continueButtonCLick();
         $("div.notification_status_error div.notification__content").should(Condition.appear, Duration.ofSeconds(15)).shouldHave(Condition.text("Ошибка! Банк отказал в проведении операции."));
     }
@@ -23,7 +23,7 @@ public class BuyValidateCardOwner {
     @Test
     void shouldValidateCardOwnerFormat(){
         BuyPage buyPage = PageObjectUtils.openBuyPage();
-        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.OWNER_FORMAT));
+        buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_OWNER_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Поле обязательно для заполнения";
         buyPage.getCardOwnerErrorSpan().should(Condition.appear).shouldHave(Condition.text(errorMessage));
