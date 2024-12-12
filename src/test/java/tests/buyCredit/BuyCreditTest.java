@@ -32,7 +32,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateMonth(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_MONTH));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверно указан срок действия карты";
@@ -41,7 +41,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateMonthFormat(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_MONTH_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
@@ -50,7 +50,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateYear(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_YEAR));
         buyPage.continueButtonCLick();
         String errorMessage = "Истёк срок действия карты";
@@ -59,7 +59,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateYearFormat(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_YEAR_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
@@ -68,7 +68,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateCardNumber(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_CARD_NUMBER));
         buyPage.continueButtonCLick();
         $("div.notification_status_error div.notification__content").should(Condition.appear, Duration.ofSeconds(15)).shouldHave(Condition.text("Ошибка! Банк отказал в проведении операции."));
@@ -76,7 +76,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateCardNumberFormat(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_CARD_NUMBER_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
@@ -85,7 +85,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateCardOwner(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_OWNER));
         buyPage.continueButtonCLick();
         $("div.notification_status_error div.notification__content").should(Condition.appear, Duration.ofSeconds(15)).shouldHave(Condition.text("Ошибка! Банк отказал в проведении операции."));
@@ -93,7 +93,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateCardOwnerFormat(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_OWNER_FORMAT));
         buyPage.continueButtonCLick();
         String errorMessage = "Поле обязательно для заполнения";
@@ -102,7 +102,7 @@ public class BuyCreditTest {
 
     @Test
     void shouldValidateCvc(){
-        BuyPage buyPage = PageObjectUtils.openBuyPage();
+        BuyCreditPage buyPage = PageObjectUtils.openBuyCreditPage();
         buyPage.inputTestData(UserInfoDataGenerator.generateInvalidUser(InvalidUserField.INVALID_CVC));
         buyPage.continueButtonCLick();
         String errorMessage = "Неверный формат";
